@@ -1,0 +1,6 @@
+# Dependencias de Composer
+/vendor/
+
+# Facturas generadas
+/uploads/entradas/*.pdf
+/uploads/salidas/*.pdf

@@ -1,0 +1,30 @@
+CREATE DATABASE control_finanzas
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE control_finanzas;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE entradas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(100) NOT NULL,
+    monto DECIMAL(10,2) NOT NULL,
+    fecha DATE NOT NULL,
+    factura VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE salidas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(100) NOT NULL,
+    monto DECIMAL(10,2) NOT NULL,
+    fecha DATE NOT NULL,
+    factura VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
